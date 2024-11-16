@@ -1,0 +1,263 @@
+/* Apply Google Sans (Product Sans) font to the entire app */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Product Sans', sans-serif; /* Google Sans for all text */
+}
+
+body {
+    background: linear-gradient(135deg, #153677, #4e085f); /* Gradient background */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    margin: 0; /* Remove default margin */
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff; /* White content area */
+    border-radius: 15px; /* Rounded corners for the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    display: flex; /* Ensure that the container uses flexbox */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Aligns the icon and title vertically */
+}
+
+.logo-icon {
+    width: 30px; /* Adjust width to your preference */
+    height: 30px; /* Adjust height to your preference */
+    margin-right: 10px; /* Space between icon and title */
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#progress-bar-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.circular-progress {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 2.5;
+}
+
+.circle {
+    fill: none;
+    stroke: #4caf50; /* Progress color */
+    stroke-width: 2.5;
+    transition: stroke-dasharray 0.5s ease-in-out; /* Smooth transition for progress */
+}
+
+#progress-value {
+    font-size: 20px;
+    position: absolute;
+    top: 35%; /* Position above the center */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the text is above the progress circle */
+}
+
+#status-message {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555; /* Color for status message */
+}
+
+.search-container {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Rounded corners for search input */
+    background-color: #f9f9f9; /* Light background for input */
+}
+
+h2 {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* White background for list items */
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners for list items */
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for list items */
+}
+
+li.completed {
+    color: #aaa; /* Color for completed tasks */
+}
+
+/* Add to the existing .completed class */
+.completed span {
+    text-decoration: line-through; /* Strikethrough text */
+    color: #999; /* Lighter color for completed tasks */
+    transition: text-decoration 0.3s ease, color 0.3s ease; /* Smooth transition for strikethrough */
+}
+
+/* Optional: Animation for strikethrough effect */
+@keyframes strikethroughAnimation {
+    0% {
+        text-decoration: none;
+        opacity: 0;
+    }
+    100% {
+        text-decoration: line-through;
+        opacity: 1;
+    }
+}
+
+.completed span {
+    animation: strikethroughAnimation 0.5s forwards; /* Animation on task completion */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: move; /* Change cursor to indicate draggable */
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+    width: 20px; /* Size of checkbox */
+    height: 20px;
+}
+
+.priority-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Circular priority dot */
+    display: inline-block;
+    margin-left: 10px; /* Added margin for spacing */
+}
+
+.priority-high {
+    background-color: red; /* High priority color */
+}
+
+.priority-medium {
+    background-color: orange; /* Medium priority color */
+}
+
+.priority-low {
+    background-color: green; /* Low priority color */
+}
+
+.edit-btn, .delete-btn {
+    background: none; /* No background for buttons */
+    border: none; /* No border for buttons */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 18px; /* Font size for buttons */
+    margin: 0 5px; /* Reduced margin to bring buttons closer */
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+.add-task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white; /* White background for task entry section */
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for the section */
+}
+
+.add-task-container input {
+    width: 50%; /* Take half the width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+}
+
+.add-task-container select {
+    width: 30%; /* Take the other part of the width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+}
+
+.minimalistic-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.minimalistic-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Search result highlight animation */
+.search-highlight {
+    animation: beat 0.6s ease-in-out 3;
+    border: 2px solid green;
+}
+
+/* Beat animation */
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
